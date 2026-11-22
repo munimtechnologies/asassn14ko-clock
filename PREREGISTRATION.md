@@ -93,4 +93,19 @@ r = 18.8), so a non-detection means little; this is a pointer for a proper test,
 
 ## Deviations
 
-None yet.
+**D1 (2026-11-22, data access only; code 0.1.1, `ko/asassn_io.py`).** The v0.1.0 job ran on
+2026-11-22 and ended `NO_DATA`: Sky Patrol's cone download returned "Pulled 1 of 2" light
+curves and 0 rows for the nearest catalogued source (asas_sn_id 498216284073, 0.9" away), while
+Sky Patrol announced on 2026-11-03 that it is rebuilding its catalogues and light curves. No
+ASAS-SN flux was read. Change: for each catalogued source within the radius, in order of
+separation, use the cone download's rows if there are any, else request that source's light
+curve by ID (two tries); use the first source that has rows. The second candidate is a
+Swift-catalogue entry 7.9" away, about one ASAS-SN pixel, so it samples the same nucleus. Which
+source was used is written to results.json. Gate G1 (reproducing the six published peaks) still
+decides whether anything is graded. Nothing else changes.
+
+Note on v0.1.0's TESS output (cross-check only, not graded): G2 did not pass because sector 4
+was not measured, so by the rule above TESS results are not used. For full disclosure: before
+writing D1 we saw v0.1.0's TESS summary, which reproduced the published sector-33 peak (1.2 d
+early) and reported no flare above baseline in sector 98 near the extrapolated ephemeris time
+(MJD ~61020). Because G2 failed, that is not a result; D1 does not touch the TESS code.
