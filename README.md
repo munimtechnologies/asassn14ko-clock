@@ -7,16 +7,21 @@ because a star on a tight, eccentric orbit around the supermassive black hole lo
 at each close approach. The flares arrive a little earlier every cycle. The last published timing
 fit (Payne et al. 2023, ApJ 951, 134; arXiv:2206.11278) used flares up to November 2021 and
 found the period shrinking at dP/dt = -0.0026 +- 0.0006, far too fast for gravitational
-waves. No timing analysis since has used the roughly 15 flares from 2022 to 2026.
+waves.
 
-This repository is an open, **pre-registered** test (see [PREREGISTRATION.md](PREREGISTRATION.md))
-of three questions, using only public data (ASAS-SN Sky Patrol v2 and TESS):
+## Result (v0.1.0, graded 2026-11-26): DECAY_STEADY
 
-1. Did the five forecast peaks of 2022-2023 arrive on time?
-2. Is the period still shrinking, and is the decay steady, speeding up or slowing down?
-3. Are the flares fading?
+With eight new ASAS-SN flare peaks from 2022-2024 (after our pipeline reproduced all six published
+peaks it was checked against), the period has shrunk at one constant rate for twelve years:
+**dP/dt = -0.00197 +- 0.00014** from 29 flares (2014-2024), 14 sigma from zero, with no sign of
+acceleration or slowing (cubic term z = +1.0). Our peaks alone give -0.00169 +- 0.00041 (4.1
+sigma). Three of the four measurable 2022-2023 forecasts came true; since 2023 the flares arrive
+7-14 days later than the 2023 ephemeris, whose steeper rate overshoots. The period was 106.8 d in
+late 2024. The next well-placed flare is predicted near 2027-02-23 (MJD 61459, +-7 d). Full
+grading: [GRADING.md](GRADING.md); files in `results/v0.1.0/`.
 
-The rule, gates and outcome classes were fixed before any post-2021 data were downloaded.
+The rule, gates and outcome classes were fixed before any post-2021 data were downloaded
+([PREREGISTRATION.md](PREREGISTRATION.md)).
 
 ## Layout
 
@@ -27,7 +32,7 @@ The rule, gates and outcome classes were fixed before any post-2021 data were do
 - `ko/asassn_io.py`, `ko/tess_io.py`: data access (pyasassn client; MAST TESSCut)
 - `job.py`: runs everything; writes `results.json`, `peaks_g.csv` and binned light curves
 - `test_ko.py`: unit tests (`python -m unittest -v test_ko`)
-- `notes/`: prior-art check
+- `notes/`: prior-art checks
 
 ## Run
 
@@ -48,4 +53,5 @@ Linial & Quataert 2024; Bandopadhyay et al. 2024; Yao et al. 2025.
 ## About
 
 By MV2 of Munim, Inc. (mv2@munimtech.com). The code and analysis were made with AI agents
-working in his name; no human expert has checked them yet. Licence: Apache-2.0.
+working in his name; no human expert has checked them yet. Licence: Apache-2.0 (code); text and
+results CC BY 4.0.

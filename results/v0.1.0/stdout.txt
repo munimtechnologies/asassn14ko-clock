@@ -1,0 +1,94 @@
+===== setup-01-git: git clone https://github.com/munimtechnologies/asassn14ko-clock /tmp/k
+
+===== setup-02-python: python -c "import os,shutil; [(os.makedirs(os.path.dirname(d), exist_ok=True), shutil.copy2(os.path.join(r, f), d)) for r, _, fs in os.walk('/tmp/k') if '.git' not in r for f in fs for d in [os.path.j
+
+===== setup-03-pip: pip install -r /work/requirements.txt
+Collecting numpy (from -r /work/requirements.txt (line 1))
+  Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting astropy (from -r /work/requirements.txt (line 2))
+  Downloading astropy-8.0.3-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Collecting pandas (from -r /work/requirements.txt (line 3))
+  Downloading pandas-3.1.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
+Collecting requests (from -r /work/requirements.txt (line 4))
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting astropy-iers-data>=0.2026.10.19.0.52.1 (from astropy->-r /work/requirements.txt (line 2))
+  Downloading astropy_iers_data-0.2026.11.23.0.35.53-py3-none-any.whl.metadata (3.2 kB)
+Collecting packaging>=25.0 (from astropy->-r /work/requirements.txt (line 2))
+  Downloading packaging-26.4-py3-none-any.whl.metadata (3.5 kB)
+Collecting pyerfa>=2.0.1.3 (from astropy->-r /work/requirements.txt (line 2))
+  Downloading pyerfa-2.0.1.5-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.7 kB)
+Collecting PyYAML>=6.0.0 (from astropy->-r /work/requirements.txt (line 2))
+  Downloading pyyaml-6.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.3 kB)
+Collecting python-dateutil>=2.9.0 (from pandas->-r /work/requirements.txt (line 3))
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting charset_normalizer<4,>=2 (from requests->-r /work/requirements.txt (line 4))
+  Downloading charset_normalizer-3.5.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (43 kB)
+Collecting idna<4,>=2.5 (from requests->-r /work/requirements.txt (line 4))
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting urllib3<3,>=1.26 (from requests->-r /work/requirements.txt (line 4))
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting certifi>=2023.5.7 (from requests->-r /work/requirements.txt (line 4))
+  Downloading certifi-2026.11.20-py3-none-any.whl.metadata (2.5 kB)
+Collecting tzdata (from python-dateutil>=2.9.0->pandas->-r /work/requirements.txt (line 3))
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (15.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 36.4 MB/s eta 0:00:00
+Downloading astropy-8.0.3-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (10.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 34.7 MB/s eta 0:00:00
+Downloading pandas-3.1.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 33.1 MB/s eta 0:00:00
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading astropy_iers_data-0.2026.11.23.0.35.53-py3-none-any.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 22.5 MB/s eta 0:00:00
+Downloading certifi-2026.11.20-py3-none-any.whl (127 kB)
+Downloading charset_normalizer-3.5.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (257 kB)
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Downloading packaging-26.4-py3-none-any.whl (140 kB)
+Downloading pyerfa-2.0.1.5-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (738 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 738.7/738.7 kB 26.3 MB/s eta 0:00:00
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading pyyaml-6.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (849 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 849.2/849.2 kB 22.9 MB/s eta 0:00:00
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: urllib3, tzdata, PyYAML, packaging, numpy, idna, charset_normalizer, certifi, astropy-iers-data, requests, python-dateutil, pyerfa, pandas, astropy
+Successfully installed PyYAML-6.0.4 astropy-8.0.3 astropy-iers-data-0.2026.11.23.0.35.53 certifi-2026.11.20 charset_normalizer-3.5.3 idna-3.20 numpy-2.5.5 packaging-26.4 pandas-3.1.1 pyerfa-2.0.1.5 python-dateutil-4.0.0 requests-2.34.2 tzdata-2026.6 urllib3-2.8.0
+
+===== run-01-python: python -m unittest -v test_ko
+
+===== run-02-python: python job.py --data-dir /data --out-dir /out
+Welcome to ASAS-SN Skypatrol!
+
+Current Deployment Version: 0.6.20 (11 SEPTEMBER 2025)
+Please upgrade your client if not up to date.
+
+New major release coming for Skypatrol. 
+We are rebuilding our catalogs and lightcurves in full.
+The API will remain the same, but asas_sn_ids will change for some targets.
+
+Kyle Hart 
+03 November 2026
+
+Downloading Curves...
+Pulled 1 of 2
+Downloading Curves...
+Pulled 0 of 1
+Downloading Curves...
+Pulled 0 of 1
+ASAS-SN by-ID 498216284073: try 1: 0 rows; try 2: 0 rows
+ASAS-SN 661431833080 (rank 1, 7.9"): 2429 rows
+Welcome to ASAS-SN Skypatrol!
+
+Current Deployment Version: 0.6.20 (11 SEPTEMBER 2025)
+Please upgrade your client if not up to date.
+
+New major release coming for Skypatrol. 
+We are rebuilding our catalogs and lightcurves in full.
+The API will remain the same, but asas_sn_ids will change for some targets.
+
+Kyle Hart 
+03 November 2026
+
+OUTCOME: DECAY_STEADY
+gate G1: {"pass": true, "n_measured": 6, "n_pass": 6, "rows": [{"n": 15, "published": 58546.6, "ours": 58548.21694300007, "ours_err": 0.41311616593301215, "diff": 1.616943000073661, "tol": 2.0, "pass": true}, {"n": 17, "published": 58768.0, "ours": 58769.93358349995, "ours_err": 0.998192290284506, "diff": 1.9335834999510553, "tol": 4.238807690312318, "pass": true}, {"n": 18, "published": 58877.9, "ours": 58878.80941599999, "ours_err": 1.7394388187282617, "diff": 0.9094159999876865, "tol": 5.3901137870075555, "pass": true}, {"n": 21, "published": 59205.7, "ours": 59207.37644230006, "ours_err": 0.5178618624538754, "diff": 1.6764423000640818, "tol": 2.0, "pass": true}, {"n": 22, "published": 59315.2, "ours": 59315.93312100023, "ours_err": 1.6060467540338106, "diff": 0.7331210002303123, "tol": 5.092835711593577, "pass": true}, {"n": 24, "published": 59532.2, "ours": 59533.124108335425, "ours_err": 0.6891080262158518, "diff": 0.9241083354281727, "tol": 3.4005630189949376, "pass": true}]}
+Pdot = -0.00169 +- 0.00041 (4.1 sigma); cubic z = 1.58; P(last) = 106.98 d; jitter 3.32 d
