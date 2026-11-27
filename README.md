@@ -23,6 +23,17 @@ grading: [GRADING.md](GRADING.md); files in `results/v0.1.0/`.
 The rule, gates and outcome classes were fixed before any post-2021 data were downloaded
 ([PREREGISTRATION.md](PREREGISTRATION.md)).
 
+## Open test (frozen 2026-11-27): does the clock wobble as the orbit precesses?
+
+Linial & Quataert (2024, arXiv:2309.15849) explain the decay by drag as the star crosses the
+black hole's gas disc, and expect that drag to be modulated as the orbit precesses, leaving an
+oscillation in the flare times (period T_prec/2, about 16 orbits in their example). They asked for
+exactly this analysis of the timing data. `precession.py` searches the 29 flare times for that
+wobble (global false-alarm probability from simulations) and, if there is none, sets 95% limits on
+its amplitude and on the fractional modulation of dP/dt as a function of period. Rules, outcomes and
+an honest note on blinding: [AMENDMENT-2026-11-27-precession.md](AMENDMENT-2026-11-27-precession.md).
+Results will appear in `results/precession-v0.1.0/`.
+
 ## Layout
 
 - `ko/ephem.py`: published ephemeris, forecasts and peak times (with references)
@@ -32,6 +43,8 @@ The rule, gates and outcome classes were fixed before any post-2021 data were do
 - `ko/asassn_io.py`, `ko/tess_io.py`: data access (pyasassn client; MAST TESSCut)
 - `job.py`: runs everything; writes `results.json`, `peaks_g.csv` and binned light curves
 - `test_ko.py`: unit tests (`python -m unittest -v test_ko`)
+- `precession.py`, `test_precession.py`, `timings_29.csv`: the precession-wobble search
+  (standard library only)
 - `notes/`: prior-art checks
 
 ## Run
@@ -40,6 +53,8 @@ The rule, gates and outcome classes were fixed before any post-2021 data were do
 pip install -r requirements.txt
 python -m unittest -v test_ko
 python job.py --data-dir data --out-dir out
+python -m unittest -v test_precession
+python precession.py --data timings_29.csv --results-json results/v0.1.0/results.json --out-dir out
 ```
 
 ## Credit
